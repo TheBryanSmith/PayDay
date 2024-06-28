@@ -49,7 +49,11 @@ public class PayDay {
     * return name, grossPay, deduction, netPay as String
      */
     public String pay(String n, double rate, double worked, double deduct) {
-        return null;
+       double grossPay = rate * worked;
+       double deduction = grossPay* deduct;
+       double netPay = grossPay - deduction;
+
+        return String.format("%s " + "%.2f" + " %.2f" + " %.2f", n ,rate , worked , deduct);
     }
 
 
@@ -90,7 +94,7 @@ public class PayDay {
 
     public TimeCard[] createRunData() {
         TimeCard[] cards = {
-                new TimeCard("Kris", 21.5, 10.0, 0.05),
+                new TimeCard("Kris", 21.5, 10.00, 0.05),
                 new TimeCard("Dolio", 23.0, 12.0, 0.05),
                 new TimeCard("Karen", 22.0, 12.0, 0.05),
         };
